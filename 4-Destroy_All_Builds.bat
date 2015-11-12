@@ -1,2 +1,0 @@
-vagrant destroy --force
-@PAUSE
