@@ -10,10 +10,9 @@ SETX /m vagrant_folder "C:\Users\Public\.vagrant.d"
 SETX /m vbox_folder "C:\Users\Public\.VirtualBox"
 SETX /m vm_folder "C:\Users\Public\VirtualBox VMs\"
 
-REM Install Packages and add VirtualBox to path after install.
+REM Install Packages
 
 CHOCO install -y virtualbox
-SET VBOX_MSI_INSTALL_PATH="C:\Program Files\Oracle\VirtualBox"
 CHOCO install -y virtualbox.extensionpack
 CHOCO install -y vagrant
 
