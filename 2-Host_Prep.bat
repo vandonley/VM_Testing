@@ -1,8 +1,8 @@
 REM Set variables for file locations.
 
-SET vagrant_folder="C:\Users\Public\.vagrant.d"
-SET vbox_folder="C:\Users\Public\.VirtualBox"
-SET vm_folder="C:\Users\Public\VirtualBox VMs\"
+SETX vagrant_folder="C:\Users\Public\.vagrant.d"
+SETX vbox_folder="C:\Users\Public\.VirtualBox"
+SETX vm_folder="C:\Users\Public\VirtualBox VMs\"
 
 REM Install Packages
 
