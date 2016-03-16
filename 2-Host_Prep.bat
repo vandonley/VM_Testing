@@ -1,8 +1,14 @@
-REM Set variables for file locations.
+REM Set variables for file locations in this session.
 
-SETX vagrant_folder="C:\Users\Public\.vagrant.d"
-SETX vbox_folder="C:\Users\Public\.VirtualBox"
-SETX vm_folder="C:\Users\Public\VirtualBox VMs\"
+SET vagrant_folder="C:\Users\Public\.vagrant.d"
+SET vbox_folder="C:\Users\Public\.VirtualBox"
+SET vm_folder="C:\Users\Public\VirtualBox VMs\"
+
+REM Set persistent system variables.
+
+SETX /m vagrant_folder "C:\Users\Public\.vagrant.d"
+SETX /m vbox_folder "C:\Users\Public\.VirtualBox"
+SETX /m vm_folder "C:\Users\Public\VirtualBox VMs\"
 
 REM Install Packages
 
