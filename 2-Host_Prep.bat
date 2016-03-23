@@ -1,8 +1,15 @@
-REM Set variables for file locations in this session.
+REM Set environment variable so that packages and VM's
+REM shared to all users on a computer. Create folders if needed.
 
 SET vagrant_folder="C:\Users\Public\.vagrant.d"
 SET vbox_folder="C:\Users\Public\.VirtualBox"
 SET vm_folder="C:\Users\Public\VirtualBox VMs\"
+
+IF NOT EXIST %vagrant_folder% MKDIR %vagrant_folder%
+SET VAGRANT_HOME = %vagrant_folder%
+
+IF NOT EXIST %vbox_folder% MKDIR %vbox_folder%
+SET VBOX_USER_HOME = %vbox_folder%
 
 REM Set persistent system variables.
 
@@ -15,15 +22,6 @@ REM Install Packages
 CHOCO install -y virtualbox
 CHOCO install -y virtualbox.extensionpack
 CHOCO install -y vagrant
-
-REM Set environment variable so that packages and VM's
-REM shared to all users on a computer. Create folders if needed.
-
-IF NOT EXIST %vagrant_folder% MKDIR %vagrant_folder%
-SET VAGRANT_HOME = %vagrant_folder%
-
-IF NOT EXIST %vbox_folder% MKDIR %vbox_folder%
-SET VBOX_USER_HOME = %vbox_folder%
 
 REM VBOXMANAGE will set the location of the VM files.
 
