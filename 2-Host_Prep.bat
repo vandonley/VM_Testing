@@ -1,33 +1,18 @@
-REM Set environment variable so that packages and VM's
-REM shared to all users on a computer. Create folders if needed.
+REM Set variables for file locations in this session.
 
-SET vagrant_folder="C:\Users\Public\.vagrant.d"
-SET vbox_folder="C:\Users\Public\.VirtualBox"
 SET vm_folder="C:\Users\Public\VirtualBox VMs\"
-
-IF NOT EXIST %vagrant_folder% MKDIR %vagrant_folder%
-SET VAGRANT_HOME = %vagrant_folder%
-
-IF NOT EXIST %vbox_folder% MKDIR %vbox_folder%
-SET VBOX_USER_HOME = %vbox_folder%
-
-REM Set persistent system variables.
-
-SETX /m vagrant_folder "C:\Users\Public\.vagrant.d"
-SETX /m vbox_folder "C:\Users\Public\.VirtualBox"
-SETX /m vm_folder "C:\Users\Public\VirtualBox VMs\"
-
-REM Install Packages
-
-CHOCO install -y virtualbox
-CHOCO install -y virtualbox.extensionpack
-CHOCO install -y vagrant
+SET PATH=%PATH%;C:\Program Files\Oracle\VirtualBox;
 
 REM VBOXMANAGE will set the location of the VM files.
 
 IF NOT EXIST %vm_folder% MKDIR %vm_folder%
-"%VBOX_MSI_INSTALL_PATH%VBOXMANAGE.EXE" setproperty machinefolder %vm_folder%
 
+VBOXMANAGE.EXE setproperty machinefolder %vm_folder%
+
+REM Install Packages
+
+CHOCO install -y virtualbox.extensionpack
+CHOCO install -y vagrant
 
 @ECHO OFF
 ECHO .
